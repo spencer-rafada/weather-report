@@ -97,8 +97,8 @@ def determine_weather(data):
 
 def print_weather(data):
     print("Weather:", determine_weather(data))
-    print("Temperature:", data["temperature"])
-    print("Wind Speed:", data["windSpeed"])
+    print("Temperature:", data["temperature"], "Celsius")
+    print("Wind Speed:", data["windSpeed"], "m/s")
 
 def main():
     print("Getting weather information of your location...")
