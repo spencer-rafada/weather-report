@@ -1,5 +1,7 @@
 # Weather Report Project
 
+![Yes, I am from Rexburg, ID. This is the output.](output-snippet.JPG)
+
 This application prints out the weather in the location where the user is from. The application takes the user's IP address to get the location which will be used to fetch the weather datal. It fetches data from [ClimaCell](https://www.tomorrow.io/)'s Weather API.
 
 ## Prerequisites
