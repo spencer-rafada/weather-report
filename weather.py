@@ -6,6 +6,7 @@ def get_location():
     url = "http://ipinfo.io/json"
     response = request.urlopen(url)
     data = json.load(response)
+    print("You are from", data["city"], "and the weather is...")
 
     return data['loc']
 
