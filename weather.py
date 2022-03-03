@@ -31,67 +31,67 @@ def get_weather(coordinates):
     return data
 
 def determine_weather(data):
-    if data["weatherCode"] == 0:
+    weather_code = data["weatherCode"]
+    if weather_code == 0:
         weather = "Unknown"
-    elif data["weatherCode"] == 1000:
+    elif weather_code == 1000:
         weather = "Clear"
-    elif data["weatherCode"] == 1001:
+    elif weather_code == 1001:
         weather = "Cloudy"
-    elif data["weatherCode"] == 1100:
+    elif weather_code == 1100:
         weather = "Mostly Clear"
-    elif data["weatherCode"] == 1101:
+    elif weather_code == 1101:
         weather = "Partly Cloudy"
-    elif data["weatherCode"] == 1102:
+    elif weather_code == 1102:
         weather = "Mostly Cloudy"
-    elif data["weatherCode"] == 2000:
+    elif weather_code == 2000:
         weather = "Fog"
-    elif data["weatherCode"] == 2100:
+    elif weather_code == 2100:
         weather = "Light Fog"
-    elif data["weatherCode"] == 3000:
+    elif weather_code == 3000:
         weather = "Light Wind"
-    elif data["weatherCode"] == 3001:
+    elif weather_code == 3001:
         weather = "Wind"
-    elif data["weatherCode"] == 3002:
+    elif weather_code == 3002:
         weather = "Strong Wind"
-    elif data["weatherCode"] == 4000:
+    elif weather_code == 4000:
         weather = "Drizzle"
-    elif data["weatherCode"] == 4001:
+    elif weather_code == 4001:
         weather = "Rain"
-    elif data["weatherCode"] == 4200:
+    elif weather_code == 4200:
         weather = "Light Rain"
-    elif data["weatherCode"] == 4201:
+    elif weather_code == 4201:
         weather = "Heavy Rain"
-    elif data["weatherCode"] == 5000:
+    elif weather_code == 5000:
         weather = "Snow"
-    elif data["weatherCode"] == 5001:
+    elif weather_code == 5001:
         weather = "Flurries"
-    elif data["weatherCode"] == 5100:
+    elif weather_code == 5100:
         weather = "Light Snow"
-    elif data["weatherCode"] == 5101:
+    elif weather_code == 5101:
         weather = "Heavy Snow"
-    elif data["weatherCode"] == 6000:
+    elif weather_code == 6000:
         weather = "Freezing Drizzle"
-    elif data["weatherCode"] == 6001:
+    elif weather_code == 6001:
         weather = "Freezing Rain"
-    elif data["weatherCode"] == 6200:
+    elif weather_code == 6200:
         weather = "Light Freezing Rain"
-    elif data["weatherCode"] == 6201:
+    elif weather_code == 6201:
         weather = "Heavy Freezing Rain"
-    elif data["weatherCode"] == 7000:
+    elif weather_code == 7000:
         weather = "Ice Pellets"
-    elif data["weatherCode"] == 7101:
+    elif weather_code == 7101:
         weather = "Heavy Ice Pellets"
-    elif data["weatherCode"] == 7102:
+    elif weather_code == 7102:
         weather = "Light Ice Pellets"
-    elif data["weatherCode"] == 8000:
+    elif weather_code == 8000:
         weather = "Thunderstorm"
     return weather
 
 def print_weather(data):
-    #print("Weather: ", determine_weather(data["weatherCode"]))
-    print("Temperature: ", data["temperature"])
-    print("Wind Speed: ", data["windSpeed"])
-    print(data["weatherCode"])
+    print("Weather:", determine_weather(data))
+    print("Temperature:", data["temperature"])
+    print("Wind Speed:", data["windSpeed"])
 
 def main():
     print("Getting weather information of your location...")
