@@ -3,6 +3,7 @@ import json
 import requests
 
 def get_location():
+    # Fetch and return the user's location through the IP address
     url = "http://ipinfo.io/json"
     response = request.urlopen(url)
     data = json.load(response)
@@ -13,25 +14,30 @@ def get_location():
 
 def get_weather(coordinates):
     # Documentation for tomorrow.io: https://docs.tomorrow.io/recipes/build-your-own-weather-app-with-one-call
-    # Request the temperature
+    # End point and API key are provided by creating an account at https://tomorrow.io
     end_point = "https://api.tomorrow.io/v4/timelines"
     api_key = "nALqyNxPzcbDWp7gcyYw1bxGD5mlCjWR"
 
+    # Determine the fields you want to fetch from the end point
     fields = [
         "windSpeed", 
         "temperature",
         "weatherCode"]
 
+    # Determine the timesteps (current, 1h, 1d)
     timesteps = ["current"]
 
+    # Send a POST request to receive a response with the JSON file
     body = {"location": coordinates, "timesteps": timesteps, "units": "metric", "fields": fields}
     response = requests.post(f'{end_point}?apikey={api_key}', json=body)
 
     data = response.json()
+    # Parsing through the JSON file can be quite challenging, but I know you can do this.
     data = data["data"]["timelines"][0]["intervals"][0]["values"] # Could be better on parsing
     return data
 
 def determine_weather(data):
+    # Return what type of weather by determining the weatherCode
     weather_code = data["weatherCode"]
     if weather_code == 0:
         weather = "Unknown"
