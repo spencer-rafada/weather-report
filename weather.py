@@ -16,7 +16,7 @@ def get_weather(coordinates):
     # Documentation for tomorrow.io: https://docs.tomorrow.io/recipes/build-your-own-weather-app-with-one-call
     # End point and API key are provided by creating an account at https://tomorrow.io
     end_point = "https://api.tomorrow.io/v4/timelines"
-    api_key = "nALqyNxPzcbDWp7gcyYw1bxGD5mlCjWR"
+    api_key = "api key"
 
     # Determine the fields you want to fetch from the end point
     fields = [
